@@ -2,7 +2,7 @@
 <ul class="list-group">
   <li
     *ngFor="let character of charactersList; let i=index"
-      class="list-group-item border-1">
+      class="list-group-item {{ i===0 ? 'list-group-item-success':'' }}">
     <span class="text-primary"> {{ i + 1 }} </span>
     {{ character.name }}
     -
@@ -23,7 +23,10 @@
     let i=index;
     let isFirst = first;
     let isTheLast = last; let odd = odd; let isEven = even"
-    class="list-group-item border-1">
+    class="list-group-item"
+    [ngClass]="{ 'list-group-item-success': isFirst, 'list-group-item-warning': isTheLast}"
+  >
+
     <span class="text-primary"> {{ i + 1 }} </span>
     {{ character.name }}
     -
