@@ -22,4 +22,10 @@ export class MainPageComponent {
 
   }
 
+  public addCharacter(character: Character): void {
+    this.characters.push(character);
+    console.log("Character added in main:")
+    console.log(character);
+  }
+
 }

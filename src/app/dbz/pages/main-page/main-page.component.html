@@ -4,6 +4,6 @@
     <app-dbz-list-characters [charactersList]="characters"></app-dbz-list-characters>
   </div>
   <div class="col">
-    <app-dbz-add-character></app-dbz-add-character>
+    <app-dbz-add-character (addNewCharacter)="addCharacter($event)"></app-dbz-add-character>
   </div>
 </div>
