@@ -2,11 +2,27 @@
 <form class="row">
   <div class="form-group">
     <label for="name">Nombre</label>
-    <input type="text" class="form-control" id="name" placeholder="Nombre">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Nombre"
+      [(ngModel)]="character.name
+">
+    {{character.name}}
   </div>
   <div class="form-group">
     <label for="power">Poder</label>
-    <input type="text" class="form-control" id="power" placeholder="Poder">
+    <input
+      type="text"
+      class="form-control"
+      id="power"
+      name="power"
+      placeholder="Poder"
+      [(ngModel)]="character.power">
+    {{character.power}}
   </div>
-  <button type="submit" class="btn btn-primary">Agregar</button>
+  <pre>{{character | json}}</pre>
+  <button type="submit" class="btn btn-primary" (click)="addCharacter()">Agregar</button>
 </form>
