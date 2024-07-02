@@ -2,7 +2,7 @@
 <ul class="list-group">
   <li
     *ngFor="let character of charactersList; let i=index"
-      class="list-group-item {{ i===0 ? 'list-group-item-success':'' }}">
+    class="list-group-item {{ i===0 ? 'list-group-item-success':'' }}">
     <span class="text-primary"> {{ i + 1 }} </span>
     {{ character.name }}
     -
@@ -23,21 +23,25 @@
     let i=index;
     let isFirst = first;
     let isTheLast = last; let odd = odd; let isEven = even"
-    class="list-group-item"
+    class="list-group-item d-flex justify-content-between align-items-center"
     [ngClass]="{ 'list-group-item-success': isFirst, 'list-group-item-warning': isTheLast}"
   >
 
-    <span class="text-primary"> {{ i + 1 }} </span>
-    {{ character.name }}
-    -
-    {{ character.power }}
+    <div>
+      <span class="text-primary"> {{ i + 1 }} </span>
+      {{ character.name }}
+      -
+      {{ character.power }}
 
-    <span>
-      <br>
-      It the first character in the list {{ isFirst ? '🥇' : '' }}
-      Its the last character in the list {{ isTheLast ? '🥇' : '' }}
-      Its an odd character {{ odd ? '🔴' : '' }}
-      Its an even character {{ isEven ? '🟢' : '' }}
-    </span>
+      <span>
+        <br>
+        It the first character in the list {{ isFirst ? '🥇' : '' }}
+        Its the last character in the list {{ isTheLast ? '🥇' : '' }}
+        Its an odd character {{ odd ? '🔴' : '' }}
+        Its an even character {{ isEven ? '🟢' : '' }}
+      </span>
+    </div>
+    <button class="btn btn-danger" (click)="deleteCharacter(i)">Delete</button>
+
   </li>
 </ul>

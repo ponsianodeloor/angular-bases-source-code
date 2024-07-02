@@ -28,4 +28,9 @@ export class MainPageComponent {
     console.log(character);
   }
 
+  public deleteCharacter(index: number): void {
+    console.log("Character deleted in main:" + index);
+    this.characters.splice(index, 1);
+  }
+
 }
