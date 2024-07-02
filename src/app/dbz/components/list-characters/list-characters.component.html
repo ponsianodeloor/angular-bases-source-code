@@ -1,8 +1,40 @@
 <h4>Listado</h4>
 <ul class="list-group">
-  <li *ngFor="let character of charactersList" class="list-group-item border-1">
+  <li
+    *ngFor="let character of charactersList; let i=index"
+      class="list-group-item border-1">
+    <span class="text-primary"> {{ i + 1 }} </span>
     {{ character.name }}
     -
     {{ character.power }}
+
+    <span>
+      <br>
+      It the first character in the list {{ i === 0 ? '🥇' : '' }}
+      Its the last character in the list {{ i === charactersList.length - 1 ? '🥇' : '' }}
+    </span>
+  </li>
+</ul>
+
+<h4>Listado Its First its Last</h4>
+<ul class="list-group">
+  <li
+    *ngFor="let character of charactersList;
+    let i=index;
+    let isFirst = first;
+    let isTheLast = last; let odd = odd; let isEven = even"
+    class="list-group-item border-1">
+    <span class="text-primary"> {{ i + 1 }} </span>
+    {{ character.name }}
+    -
+    {{ character.power }}
+
+    <span>
+      <br>
+      It the first character in the list {{ isFirst ? '🥇' : '' }}
+      Its the last character in the list {{ isTheLast ? '🥇' : '' }}
+      Its an odd character {{ odd ? '🔴' : '' }}
+      Its an even character {{ isEven ? '🟢' : '' }}
+    </span>
   </li>
 </ul>
