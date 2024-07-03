@@ -9,15 +9,13 @@ import {Character} from "../../interfaces/character.interface";
 export class ListCharactersComponent {
 
   @Input()
-  public charactersList: Character[] = [
-    {
-      name: 'Trunks',
-      power: 2500
-    }
-  ];
+  public charactersList: Character[] = [];
 
   @Output()
   public deleteCharacterEvent: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+  public deleteCharacterByIdEvent: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
   }
@@ -25,5 +23,10 @@ export class ListCharactersComponent {
   public deleteCharacter(index: number): void {
     console.log("Character deleted in list:" + index);
     this.deleteCharacterEvent.emit(index);
+  }
+
+  public deleteCharacterById(id: string): void {
+    console.log("Character deleted in list:" + id);
+    this.deleteCharacterByIdEvent.emit(id);
   }
 }

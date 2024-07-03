@@ -4,8 +4,8 @@
     <app-dbz-list-characters
       [charactersList]="dbz.characters"
       (deleteCharacterEvent)="dbz.deleteCharacter($event)"
+      (deleteCharacterByIdEvent)="dbz.deleteCharacterById($event)"
     >
-
     </app-dbz-list-characters>
   </div>
   <div class="col">
