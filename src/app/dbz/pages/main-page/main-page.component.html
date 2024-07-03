@@ -2,13 +2,13 @@
 <div class="row">
   <div class="col">
     <app-dbz-list-characters
-      [charactersList]="characters"
-      (deleteCharacterEvent)="deleteCharacter($event)"
+      [charactersList]="dbz.characters"
+      (deleteCharacterEvent)="dbz.deleteCharacter($event)"
     >
 
     </app-dbz-list-characters>
   </div>
   <div class="col">
-    <app-dbz-add-character (addNewCharacter)="addCharacter($event)"></app-dbz-add-character>
+    <app-dbz-add-character (addNewCharacter)="dbz.addCharacter($event)"></app-dbz-add-character>
   </div>
 </div>
